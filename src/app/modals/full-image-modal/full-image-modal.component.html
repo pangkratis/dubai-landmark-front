@@ -1,0 +1,9 @@
+ <!-- Image in a modal -->
+ <div>
+    <img class="mx-5 rounded" src="{{landmark['attributes'].photo_thumb.url()}}" (click)="open(content)"/>
+</div>
+ <ng-template #content let-modal>
+    <div class="modal-body">
+        <img width="760" height="800" src="{{landmark['attributes'].photo.url()}}"/>
+    </div>
+</ng-template>

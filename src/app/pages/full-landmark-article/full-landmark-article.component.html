@@ -1,0 +1,17 @@
+
+<article class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <app-update-post-modal *ngIf="currentUser"></app-update-post-modal>
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <img class="my-5 rounded" src="{{landmark['photo'].url()}}"/>
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                {{landmark['description']}}
+            </div>
+            <a class="my-5 border border-primary text-center" href="{{landmark['url']}}">{{landmark['url']}}</a>
+        </div>
+    </div>
+</article>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

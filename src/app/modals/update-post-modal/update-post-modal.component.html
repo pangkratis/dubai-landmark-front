@@ -1,0 +1,33 @@
+<div class="text-end">
+
+    <button class="btn btn-lg btn-outline-primary mb-5" (click)="open(content)"><span class="material-icons-outlined">
+        edit
+        </span></button>
+</div>
+<div *ngIf="success" class="alert alert-primary" role="alert">
+  Your post has been updated successfully.
+</div>
+<div *ngIf="error" class="alert alert-danger" role="alert">
+  There was an error updating post.
+</div>
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">post update</h4>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label>Title</label>
+          <input [(ngModel)]="title" type="text" class="form-control my-2" name="title">
+          <label>Description</label>
+          <textarea [(ngModel)]="description" type="text" class="form-control my-2" name="description" style="height: 300px;"></textarea>
+          <label>ShortInfo</label>
+          <textarea [(ngModel)]="short_info" type="text" class="form-control my-2" name="short_info" style="height: 100px;"></textarea>
+          <input type="file" id="image" class="file-upload" (change)="fileUpload($event)" value="file.url()">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="updatePostButton()">Save</button>
+    </div>
+  </ng-template>

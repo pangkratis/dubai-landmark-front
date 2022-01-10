@@ -1,0 +1,29 @@
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <a *ngIf="currentUser === null" class="nav-link px-lg-3" (click)="open(content)">
+        <span class="material-icons-outlined text-white">
+            login
+        </span>
+    </a>
+    <a *ngIf="currentUser !== null" class="nav-link px-lg-3 text-danger" (click)="logoutFunction()">
+        <span class="material-icons-outlined">
+            logout
+        </span>
+    </a>
+</div>
+
+<ng-template #content let-modal>
+        <div class="modal-header">
+            <h4 class="modal-title">Log In</h4>
+        </div>
+        <div class="modal-body">
+            <input [(ngModel)]="username" type="text" class="form-control my-2" name="username" placeholder="Username">
+            <input [(ngModel)]="password" type="password" class="form-control my-2" name="password" placeholder="Password">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" 
+                    (click)="logInFunction()">
+            Log In
+            </button>
+        </div>
+</ng-template>
+

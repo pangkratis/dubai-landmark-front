@@ -1,0 +1,15 @@
+ <!-- Post preview-->
+ <div class="post-preview">
+    <div class="d-lg-flex flex-lg-row">
+        <app-full-image-modal [landmark]='landmark'></app-full-image-modal>
+        <div>
+            <a href="full-landmark-article/{{landmark['id']}}">
+                <h2 class="post-title">{{landmark['attributes'].title}}</h2>
+            </a>
+            <h6>{{landmark['attributes'].short_info}}</h6>
+            <p class="post-meta">
+                on {{landmark['createdAt'] | date:'mediumDate'}}
+            </p>
+        </div>
+    </div>
+</div>
